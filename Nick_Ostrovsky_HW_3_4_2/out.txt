@@ -1,0 +1,6 @@
+3
+	AMinsk, Pobedy, 77, 88
+
+	Novgorod, Volga, 8, 9
+
+	Yaroslavl, Long, 6, 3
