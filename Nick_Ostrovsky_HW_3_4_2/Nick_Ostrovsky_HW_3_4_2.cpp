@@ -26,10 +26,7 @@ public:
 int main()
 {
     int list = 5;
-    Flat* location = new Flat[list];
-
-    location[1].set_city("Penza");
-    std::cout << location[1].get_city();
+    
     std::ifstream city_list("in.txt");
     if (city_list.is_open())
     {
@@ -42,6 +39,7 @@ int main()
         return (-1);
     }
     city_list >> list;
+    Flat* location = new Flat[list];
     for (int i = 0; i < list; i++)
 
     {
@@ -61,6 +59,7 @@ int main()
 
     }
     Flat temp;
+
     for (int j = 0; j < list; j++)
     {
         for (int i = 0; i < list-1; i++)
@@ -68,10 +67,10 @@ int main()
             std::string a = location[i].get_city();
             std::string b = location[i + 1].get_city();
            
-            std::cout << a[0] << b[0] << std::endl;
-            if (b[0] < a[0])
+            //std::cout << a << b << std::endl;
+            if (b < a)
             {
-                std::cout << a[0] << b[0] << std::endl;
+                /*std::cout << a[0] << b[0] << std::endl;
                 temp.set_city(((location[i + 1].get_city())));
                 location[i + 1].set_city((location[i].get_city()));
                 location[i].set_city((temp.get_city()));
@@ -86,7 +85,11 @@ int main()
                 
                 temp.set_flat_number(location[i + 1].get_flat_number());
                 location[i + 1].set_flat_number(location[i].get_flat_number());
-                location[i].set_flat_number(temp.get_flat_number());
+                location[i].set_flat_number(temp.get_flat_number());*/
+
+                temp = location[i + 1];
+                location[i + 1] = location[i];
+                location[i] = temp;
             }
         }
     }
