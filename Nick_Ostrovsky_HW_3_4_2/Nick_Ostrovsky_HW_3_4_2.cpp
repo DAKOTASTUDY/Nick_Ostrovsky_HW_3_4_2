@@ -1,4 +1,4 @@
-
+﻿
 
 #include <iostream>
 #include <fstream>
@@ -85,7 +85,10 @@ int main()
                 
                 temp.set_flat_number(location[i + 1].get_flat_number());
                 location[i + 1].set_flat_number(location[i].get_flat_number());
-                location[i].set_flat_number(temp.get_flat_number());*/
+                location[i].set_flat_number(temp.get_flat_number());
+                Я написал такой код потому, что устранял ошибки, сразу много и подумал что присвоение не по полям не работает.
+                В файл выводилось -1.
+                */
 
                 temp = location[i + 1];
                 location[i + 1] = location[i];
